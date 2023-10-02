@@ -1,0 +1,77 @@
+##execute login
+
+POST http://localhost:3001/api/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "username":"admin@admin.it",
+    "password":"password"
+}
+###
+GET http://localhost:3001/api/pages/published HTTP/1.1
+
+###
+GET http://localhost:3001/api/pages/all HTTP/1.1
+###
+GET http://localhost:3001/api/webpage/name HTTP/1.1
+###
+PUT http://localhost:3001/api/webpage/name HTTP/1.1
+content-type: application/json
+
+{
+    "name":"admin"
+}
+###
+GET http://localhost:3001/api/pages/1 HTTP/1.1
+###
+POST http://localhost:3001/api/pages/add HTTP/1.1
+content-type: application/json
+
+{
+    "blocks":[{"type":"Header", 
+                "content":"test", 
+                "position": "1"
+                },{
+                   "type":"Paragraph", 
+                    "content":"test", 
+                    "position": "2" 
+                },{
+                   "type":"Image", 
+                    "content":"test", 
+                    "position": "3" 
+                }],
+    "pageInfo":{
+        "title": "The cat", 
+        "IDauthor": "2", 
+        "creationDate": "2024-07-07", 
+        "publicationDate":"2024-07-09"
+        }
+}
+###
+DELETE  http://localhost:3001/api/pages/2 HTTP/1.1
+content-type: application/json
+###
+PUT http://localhost:3001/api/pages/edit/50 HTTP/1.1
+content-type: application/json
+
+{
+    "blocks":[{"type":"Header", 
+                "content":"no", 
+                "position": "1"
+                },{
+                   "type":"Paragraph", 
+                    "content":"okokokokoko", 
+                    "position": "2" 
+                },{
+                   "type":"Image", 
+                    "content":"sucamelo", 
+                    "position": "3" 
+                }],
+    "pageInfo":{
+        "IDpage":50,
+        "title": "ok..", 
+        "emailAuthor": "user@user.it", 
+        "creationDate": "2024-07-07", 
+        "publicationDate":"2024-07-09"
+        }
+}
