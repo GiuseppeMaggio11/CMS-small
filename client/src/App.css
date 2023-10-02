@@ -1,0 +1,8 @@
+/* Styles related to NavBar */
+.navbar-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.below-nav {
+  padding-top: 5rem;
+}
